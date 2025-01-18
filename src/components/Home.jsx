@@ -1,7 +1,12 @@
 import { GoGlobe } from "react-icons/go";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { RiHome6Line } from "react-icons/ri";
+import { GiProgression } from "react-icons/gi";
+import { IoMdMenu } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+import { IoSettingsOutline } from "react-icons/io5";
 const Home = () => {
+    const navigate = useNavigate()
     return (
         <section>
             <div className="px-5 mt-10">
@@ -15,7 +20,7 @@ const Home = () => {
                 </div>
                 <h1 className="text-xl mt-4 text-[#8F8F95]">"Say Nope, Stay Dope"</h1>
                 <div className="grid grid-cols-2 grid-rows-3 gap-4 mt-10">
-                    <div className="row-span-2 bg-[#DFF3FE] rounded-xl py-3">
+                    <div onClick={()=>navigate("/daily-challenges")} className="row-span-2 bg-[#DFF3FE] rounded-xl py-3">
                         <div className="px-3 mt-2">
                             <img src="\imgs\Rating container.png" alt="home img 1" />
                         </div>
@@ -24,19 +29,25 @@ const Home = () => {
                             <p className="mt-2 text-sm font-medium">Ready Go</p>
                         </div>
                     </div>
-                    <div className="col-start-1 row-start-3 bg-[#FDEFE4] rounded-xl flex justify-left items-center px-3">
+                    <div 
+                    onClick={()=>navigate("/progress")}
+                    className="col-start-1 row-start-3 bg-[#FDEFE4] rounded-xl flex justify-left items-center px-3">
                         <div>
                             <h1 className="text-xl text-center font-bold w-10 leading-tight">Progress Tracker</h1>
                             <p className="mt-2 text-sm font-medium">Points awarded</p>
                         </div>
                     </div>
-                    <div className="col-start-2 row-start-1 bg-[#E7E0FF] rounded-xl flex justify-left items-center px-3">
+                    <div 
+                    onClick={()=>navigate("/study-materials")}
+                    className="col-start-2 row-start-1 bg-[#E7E0FF] rounded-xl flex justify-left items-center px-3">
                         <div>
                             <h1 className="text-xl text-center font-bold w-10 leading-tight">Study Materials</h1>
                             <p className="mt-2 text-sm font-medium">23 Materials</p>
                         </div>
                     </div>
-                    <div className="row-span-2 bg-[#DFF3FE] rounded-xl py-3">
+                    <div 
+                    onClick={()=>navigate("/practice")}
+                    className="row-span-2 bg-[#DFF3FE] rounded-xl py-3">
                         <div className="px-3 mt-5">
                             <img src="\imgs\no drugs.png" alt="home img 1" />
                         </div>
@@ -53,17 +64,19 @@ const Home = () => {
                     <RiHome6Line className="text-2xl" />
                     <p className="text-[#282828] text-base">Home</p>
                 </div>
-                <div className="flex flex-col items-center">
-                    <RiHome6Line className="text-2xl" />
-                    <p className="text-[#282828] text-base">Home</p>
+                <div 
+                onClick={()=>navigate("/progress")}
+                className="flex flex-col items-center">
+                    <GiProgression className="text-2xl" />
+                    <p className="text-[#282828] text-base">Progress</p>
                 </div>
                 <div className="flex flex-col items-center">
-                    <RiHome6Line className="text-2xl" />
-                    <p className="text-[#282828] text-base">Home</p>
+                    <IoSettingsOutline className="text-2xl" />
+                    <p className="text-[#282828] text-base">Settings</p>
                 </div>
                 <div className="flex flex-col items-center">
-                    <RiHome6Line className="text-2xl" />
-                    <p className="text-[#282828] text-base">Home</p>
+                    <IoMdMenu className="text-2xl" />
+                    <p className="text-[#282828] text-base">Menu</p>
                 </div>
 
             </div >
